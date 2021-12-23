@@ -8,27 +8,33 @@ import Recipe from "./pages/recipe/Recipe";
 
 // styles
 import "./App.css";
+import ThemeSelector from "./components/ThemeSelector";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
-  return <div className="App">
-    <BrowserRouter>
-      <Navbar/>
-      <Switch>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-        <Route  path="/create">
-          <Create/>
-        </Route>
-        <Route  path="/search">
-          <Search/>
-        </Route>
-        <Route  path="/recipe/:id">
-          <Recipe/>
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  </div>;
+  const { mode } = useTheme();
+  return (
+    <div className={`App ${mode}`}>
+      <BrowserRouter>
+        <Navbar />
+        <ThemeSelector />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/recipe/:id">
+            <Recipe />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
