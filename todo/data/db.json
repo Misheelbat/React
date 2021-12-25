@@ -1,0 +1,9 @@
+{
+    "todo": [{
+        "term": "cleaning",
+        "id": "2"
+    },{
+        "term": "going to the gym",
+        "id": "3"
+    }
+]}
