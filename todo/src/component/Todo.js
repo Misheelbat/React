@@ -1,29 +1,22 @@
-import { useState } from "react";
-import { useFetch } from "../hooks/useFetch";
+import { useState, useEffect } from "react";
+import { proFire } from "../firebase/config";
 
 export default function Todo({ setList }) {
   const [term, setTerm] = useState("");
-  const [url, setUrl] = useState("http://localhost:3000/todo");
-
-  // fetch data from server using costum hook
-  const { data } = useFetch(url);
 
   // reset input field
   const resetForm = () => {
     setTerm("");
   };
 
-  // add term into an array of all term
-  const addEvent = (todo) => {
-    setList((prevTodo) => {
-      return [...prevTodo, todo];
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const todo = { term, id: Math.floor(Math.random() * 100) };
-    addEvent(todo);
+    const todo = { term };
+    try {
+      await proFire.collection("todo").add(todo);
+    } catch (err) {
+      console.log(err);
+    }
     resetForm();
   };
 
@@ -31,6 +24,7 @@ export default function Todo({ setList }) {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
+          <span>Todo:</span>
           <input
             type="text"
             onChange={(e) => setTerm(e.target.value)}
@@ -42,7 +36,3 @@ export default function Todo({ setList }) {
     </div>
   );
 }
-
-// todo: hook json server
-// add "add" functionality to db
-// filter db with query              50
