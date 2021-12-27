@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react";
-import { proAuth} from "../firebase/config";
+import { proAuth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
-export const useSignup = () => {
+export const useLogout = () => {
   const [isCancelled, setisCancelled] = useState(false);
 
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password, displayName) => {
+  const logout = async () => {
     setError(null);
     setIsPending(true);
+
+    //sign the user out
     try {
-      // sign up
-      const res = await proAuth.createUserWithEmailAndPassword(email, password);
-      if (!res) {
-        throw new Error("could not complete signup");
-      }
-
-      //add display name to user
-      await res.user.updateProfile({ displayName: displayName });
-
-      // dispatch login action
-      dispatch({ type: "LOGIN", payload: res.user });
+      await proAuth.signOut();
+      //dispatch logout action
+      dispatch({ type: "LOGOUT" });
+      //update state
       if (!isCancelled) {
         setIsPending(false);
         setError(null);
@@ -32,13 +27,14 @@ export const useSignup = () => {
       if (!isCancelled) {
         console.log(err.message);
         setError(err.message);
-        setIsPending(false);
+        isPending(false);
       }
     }
   };
+
   useEffect(() => {
     return () => setisCancelled(true);
   }, []);
 
-  return { error, isPending, signup };
+  return { logout, error, isPending };
 };
