@@ -1,9 +1,12 @@
 import { proFire } from "../firebase/config";
 import { useEffect, useState } from "react";
 import Trashcan from "../assets/trashcan.svg";
+import { useTest } from "../hooks/useTestContext";
+import "./TodoList.css";
 
 export default function TodoList() {
   const [data, setData] = useState(null);
+  const { test, changeTest, mode } = useTest();
 
   // fetch data from server using costum hook
   useEffect(() => {
@@ -27,11 +30,15 @@ export default function TodoList() {
   };
 
   return (
-    <div>
+    <div >
       {data &&
         data.map((e) => (
-          <div key={e.id}>
-            {e.term} id: {e.id}
+          <div
+            key={e.id}
+            style={{ background: test }}
+            onClick={() => changeTest("none")}
+          >
+            {e.term} test: {test}
             <img src={Trashcan} onClick={() => handleDelete(e.id)} />
           </div>
         ))}
