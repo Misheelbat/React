@@ -18,5 +18,7 @@ firebase.initializeApp(firebaseConfig);
 const proFire = firebase.firestore();
 const proAuth = firebase.auth();
 
+//timestamp
+const timestamp = firebase.firestore.Timestamp;
 
-export { proFire, proAuth };
+export { proFire, proAuth, timestamp };
