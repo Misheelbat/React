@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { proAuth } from "../firebase/config";
+import { proAuth, proFire } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogout = () => {
@@ -7,7 +7,7 @@ export const useLogout = () => {
 
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const { dispatch } = useAuthContext();
+  const { dispatch, user } = useAuthContext();
 
   const logout = async () => {
     setError(null);
@@ -15,6 +15,10 @@ export const useLogout = () => {
 
     //sign the user out
     try {
+      // update online status
+      const { uid } = user;
+      await proFire.collection("users").doc(uid).update({ online: false });
+
       await proAuth.signOut();
       //dispatch logout action
       dispatch({ type: "LOGOUT" });

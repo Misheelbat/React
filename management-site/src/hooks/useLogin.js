@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { proAuth } from "../firebase/config";
+import { proAuth, proFire } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
@@ -7,7 +7,7 @@ export const useLogin = () => {
 
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const { dispatch } = useAuthContext();
+  const { dispatch, user } = useAuthContext();
 
   const login = async (email, password) => {
     setError(null);
@@ -16,6 +16,13 @@ export const useLogin = () => {
     //sign the user in
     try {
       const res = await proAuth.signInWithEmailAndPassword(email, password);
+
+      //update online status
+
+      await proFire
+        .collection("users")
+        .doc(res.user.uid)
+        .update({ online: true });
 
       //dispatch login action
       dispatch({ type: "LOGIN", payload: res.user });
