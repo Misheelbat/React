@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
+:root {
+	/* font-family */
+	--ff-bar-reg: 'Barlow', sans-serif;
+	--ff-bar-con: 'Barlow Condensed', sans-serif;
+	--ff-belle: 'Bellefair', serif;
+
+	/* font-size */
+	--fs-900: 80px;
+	--fs-600: 20px;
+	--fs-500: 16px;
+	--fs-400: 15px;
+	--fs-nav: 16px;
+
+	/* color */
+	--clr-main-bg: 11, 13, 23;
+	--clr-text-blue: 208, 214, 249;
+	--clr-text-white: 255, 255, 255;
+}
+@media (min-width: 375px) {
+	:root {
+		--fs-900: 150px;
+		--fs-600: 32px;
+		--fs-500: 20px;
+		--fs-400: 16px;
+		--fs-nav: 14px;
+	}
+}
+
+@media (min-width: 800px) {
+	:root {
+		--fs-900: 150px;
+		--fs-600: 32px;
+		--fs-500: 28px;
+		--fs-400: 18px;
+		--fs-nav: 16px;
+	}
+}
+.bg-dark {
+	background-color: rgb(var(--clr-main-bg));
+}
+.bg-blue {
+	background-color: rgb(var(--clr-text-blue));
+}
+.bg-white {
+	background-color: rgb(var(--clr-text-white));
+}
+.text-dark {
+	color: rgb(var(--clr-main-bg));
+}
+.text-blue {
+	color: rgb(var(--clr-text-blue));
+}
+.text-white {
+	color: rgb(var(--clr-text-white));
+}
+.uppercase {
+	text-transform: uppercase;
+}
+/* -------------- */
+/*      Reset     */
+/* -------------- */
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+picture {
+	margin: 0;
+	font-weight: 400;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+body {
+	margin: 0;
+	font-family: var(--ff-bar-reg);
+	font-size: var(--fs-400);
+	background-color: rgb(var(--clr-main-bg));
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: inherit;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* ---------------- */
+/*  utility classes */
+/* ---------------- */
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1em);
+}
+.container {
+	padding-inline: 2em;
+	margin-inline: auto;
+	max-width: 80rem;
+}
+.grid-container {
+	display: grid;
+	text-align: center;
+	place-items: center;
+	padding-inline: 1em;
+}
+.hover-underline > * {
+	cursor: pointer;
+	padding: var(--underline-gap, 1em) 0;
+	border: 0;
+	border-bottom: 0.2rem solid rgba(var(--clr-text-white), 0);
+}
+
+.hover-underline > *:hover,
+.hover-underline > *:focus {
+	border-color: rgba(var(--clr-text-white), 0.5);
+}
+
+.hover-underline > .active,
+.hover-underline > [aria-selected='true'] {
+	border-color: rgba(var(--clr-text-white), 1);
+}
