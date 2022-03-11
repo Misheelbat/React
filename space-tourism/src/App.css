@@ -1,0 +1,25 @@
+.App {
+	margin: 0;
+	font-family: var(--ff-bar-reg);
+	font-size: var(--fs-400);
+	background-color: rgb(var(--clr-main-bg));
+	line-height: 1.5;
+	overflow-x: hidden;
+	background-image: url(/public/assets/home/background-home-mobile.jpg);
+	background-size: cover;
+	background-position: bottom center;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+}
+@media (min-width: 550px) {
+	.App {
+		background-image: url(/public/assets/home/background-home-tablet.jpg);
+	}
+}
+
+@media (min-width: 800px) {
+	.App {
+		background-image: url(/public/assets/home/background-home-desktop.jpg);
+	}
+}

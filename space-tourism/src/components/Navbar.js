@@ -7,7 +7,7 @@ export default function Navbar() {
 	const [navToggle, setNavToggle] = useState(false);
 
 	return (
-		<header className="flex">
+		<header className="nav-header flex">
 			<div className="nav-logo">
 				<img src="/assets/shared/logo.svg" alt="site logo" />
 			</div>
@@ -18,12 +18,20 @@ export default function Navbar() {
 			>
 				<img
 					className="nav-button"
-					src="/assets/shared/icon-hamburger.svg"
-					alt="nav button"
+					src={
+						navToggle
+							? '/assets/shared/icon-close.svg'
+							: '/assets/shared/icon-hamburger.svg'
+					}
+					alt="navigation dropdown button"
 				/>
 			</button>
 			<nav>
-				<ul className="nav-links flex hover-underline text-white uppercase ">
+				<ul
+					id="nav-links"
+					data-nav={navToggle}
+					className="nav-links hover-underline"
+				>
 					<li>
 						<NavLink to="/">
 							<span>01</span>Home
