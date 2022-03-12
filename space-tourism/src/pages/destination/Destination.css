@@ -16,6 +16,7 @@
 	font-size: 14px;
 	letter-spacing: 2.36px;
 	text-transform: uppercase;
+	color: rgb(var(--clr-text-blue));
 }
 .dest-info p:nth-child(2) {
 	font-family: var(--ff-belle);
@@ -29,40 +30,7 @@
 	padding-top: 28px;
 	margin-top: 54px;
 }
-/* grid */
-.des-container {
-	display: grid;
-	text-align: center;
-	place-items: center;
-	padding-inline: 1rem;
-}
-@media (min-width: 800px) {
-	.des-container {
-		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
-				2rem,
-				1fr
-			);
-		gap: 0 2rem;
-		place-content: center;
-
-		text-align: left;
-		align-items: end;
-	}
-	.des-container > *:first-child {
-		grid-column: 2;
-	}
-	.des-container > *:last-child {
-		grid-column: 3;
-		justify-self: end;
-	}
-	.dest-title {
-		justify-self: start;
-	}
-}
-section {
-	background-image: url(/public/assets/destination/background-destination-desktop.jpg);
-	background-size: cover;
-}
+/* ------------ */
 
 /* site button navigation */
 .dest-nav > * {
@@ -84,11 +52,85 @@ section {
 .dest-nav > *:focus {
 	border-color: rgba(var(--clr-text-white), 0.5);
 }
+/* ------------ */
+
+/* grid */
+
+.des-container {
+	display: grid;
+	text-align: center;
+	place-items: center;
+	padding-inline: 1rem;
+}
+
+.des-container {
+	--flow-space: 2rem;
+	grid-template-areas:
+		'title'
+		'image'
+		'site-nav'
+		'content';
+	padding-bottom: 4rem;
+}
+.des-container > * {
+	max-width: 50ch;
+}
+.dest-title {
+	grid-area: title;
+	width: max-content;
+}
 
 .dest-image {
-	max-width: 445px;
-	aspect-ratio: 1;
+	grid-area: image;
+	max-width: 50%;
+}
+
+.dest-nav {
+	grid-area: site-nav;
 }
 .destination-right {
-	max-width: 450px;
+	grid-area: content;
+}
+@media (min-width: 560px) {
+	.dest-title {
+		justify-self: start;
+		margin-top: 2rem;
+	}
+	.dest-footer {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+/* ------------ */
+@media (min-width: 800px) {
+	.des-container {
+		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
+				2rem,
+				1fr
+			);
+		gap: 0 2rem;
+		place-content: center;
+
+		text-align: left;
+	}
+
+	.dest-title {
+		justify-self: start;
+	}
+
+	.des-container {
+		justify-items: start;
+		align-content: start;
+		grid-template-areas:
+			'. title title .'
+			'. image site-nav .'
+			'. image content .';
+	}
+	.dest-image {
+		max-width: 90%;
+	}
+	.dest-footer {
+		justify-content: start;
+		column-gap: 5rem;
+	}
 }

@@ -15,7 +15,6 @@
 
 	--fs-nav: 16px;
 
-
 	/* color */
 	--clr-main-bg: 11, 13, 23;
 	--clr-text-blue: 208, 214, 249;
@@ -31,11 +30,10 @@
 		--fs-400: 16px;
 
 		--fs-nav: 14px;
-	
 	}
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
 	:root {
 		--spacing-big: 4.72px;
 		--fs-900: 150px;
@@ -45,7 +43,6 @@
 		--fs-400: 18px;
 
 		--fs-nav: 16px;
-
 	}
 }
 .bg-dark {
@@ -113,6 +110,9 @@ a {
 /* ---------------- */
 /*  utility classes */
 /* ---------------- */
+.flow > *:where(:not(:first-child)) {
+	margin-top: var(--flow-space, 1rem);
+}
 
 .flex {
 	display: flex;

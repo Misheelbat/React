@@ -8,22 +8,19 @@ export default function Destination() {
 	console.log(des);
 
 	return (
-		<section className="des-container">
-			<div className="destination-left text-white">
-				<h1 className="main-title dest-title">
-					<span>01</span>
-					pick your destination
-				</h1>
-				<div className="dest-image">
-					<img src={des[0].images.png} alt="" />
-				</div>
+		<section className="des-container flow">
+			<h1 className="main-title dest-title text-white">
+				<span>01</span>
+				pick your destination
+			</h1>
+			<img className="dest-image" src={des[0].images.png} alt="planet" />
+
+			<div className="dest-nav">
+				{des.map(d => (
+					<button key={d.name}>{d.name}</button>
+				))}
 			</div>
-			<div className="destination-right text-blue">
-				<div className="dest-nav">
-					{des.map(d => (
-						<button key={d.name}>{d.name}</button>
-					))}
-				</div>
+			<div className="destination-right  text-blue">
 				<h2 className="dest-name">{des[0].name}</h2>
 				<p className="main-paragraph">{des[0].description}</p>
 				<div className="dest-footer">
