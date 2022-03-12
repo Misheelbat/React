@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useBgContext } from '../../context/BgContext';
 
 //styles
 import './Home.css';
 
 export default function Home() {
+	const currentPage = useBgContext();
+
+	useEffect(() => {
+		currentPage.setPage('homePage');
+	}, [currentPage.page]);
+
 	return (
 		<main role="main" className="home-container">
 			<div className="home-content">

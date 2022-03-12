@@ -52,6 +52,9 @@
 .dest-nav > *:focus {
 	border-color: rgba(var(--clr-text-white), 0.5);
 }
+.dest-nav > .active {
+	border-color: rgba(var(--clr-text-white), 1);
+}
 /* ------------ */
 
 /* grid */
@@ -101,7 +104,7 @@
 		justify-content: space-around;
 	}
 }
-/* ------------ */
+
 @media (min-width: 800px) {
 	.des-container {
 		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
@@ -110,17 +113,18 @@
 			);
 		gap: 0 2rem;
 		place-content: center;
-
 		text-align: left;
 	}
 
 	.dest-title {
 		justify-self: start;
+		align-self: start;
 	}
 
 	.des-container {
 		justify-items: start;
 		align-content: start;
+
 		grid-template-areas:
 			'. title title .'
 			'. image site-nav .'
@@ -128,9 +132,14 @@
 	}
 	.dest-image {
 		max-width: 90%;
+		align-self: end;
 	}
 	.dest-footer {
 		justify-content: start;
 		column-gap: 5rem;
 	}
+	.destination-right {
+		margin-top: 0;
+	}
 }
+/* ------------ */

@@ -1,5 +1,6 @@
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { useBgContext } from './context/BgContext';
 //pages and components
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
@@ -11,8 +12,11 @@ import Tech from './pages/tech/Tech';
 import './App.css';
 
 function App() {
+	const currentPage = useBgContext();
+	console.log(currentPage.page);
+
 	return (
-		<div className="App">
+		<div className={`App ${currentPage.page}`}>
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
