@@ -9,10 +9,13 @@
 	/* font-size */
 	--fs-900: 80px;
 	--fs-800: 56px;
+	--fs-700: 24px;
 	--fs-600: 20px;
 	--fs-500: 16px;
 	--fs-400: 15px;
+	--fs-300: 14px;
 
+	--fs-role: 16px;
 	--fs-nav: 16px;
 
 	/* color */
@@ -25,10 +28,12 @@
 		--spacing-big: 3.38px;
 		--fs-900: 150px;
 		--fs-800: 80px;
+		--fs-700: 40px;
 		--fs-600: 25px;
 		--fs-500: 20px;
 		--fs-400: 16px;
-
+		--fs-300: 16px;
+		--fs-role: 24px;
 		--fs-nav: 14px;
 	}
 }
@@ -38,10 +43,12 @@
 		--spacing-big: 4.72px;
 		--fs-900: 150px;
 		--fs-800: 100px;
+		--fs-700: 56px;
 		--fs-600: 32px;
 		--fs-500: 28px;
 		--fs-400: 18px;
 
+		--fs-role: 32px;
 		--fs-nav: 16px;
 	}
 }
