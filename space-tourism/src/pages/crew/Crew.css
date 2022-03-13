@@ -7,13 +7,21 @@
 .crew-role {
 	font-family: var(--ff-belle);
 	text-transform: uppercase;
-	font-size: 54px;
+	font-size: var(--fs-700);
+	margin-bottom: 1rem;
 }
 .crew-role span {
 	display: block;
-	font-size: 32px;
+	font-size: var(--fs-role);
 	color: rgba(var(--clr-text-white), 0.5);
+	margin-bottom: 0.5rem;
 }
+
+.crew-content p {
+	text-transform: none;
+}
+
+/* sub-navigation */
 
 .dot-indicators > * {
 	cursor: pointer;
@@ -45,28 +53,114 @@
 	place-items: center;
 	padding-inline: 1rem;
 }
+.crew-container {
+	--flow-space: 2rem;
+	grid-template-areas:
+		'title'
+		'image'
+		'site-nav'
+		'content';
+	padding-bottom: 4rem;
+}
+.crew-title {
+	grid-area: title;
+}
+.crew-image {
+	grid-area: image;
+	max-width: 100%;
+}
+.crew-image img {
+	width: 100%;
+	max-width: 60%;
+	margin-inline: auto;
+}
+.crew-nav {
+	grid-area: site-nav;
+}
+.crew-content {
+	grid-area: content;
+}
+.crew-content p {
+	max-width: 460px;
+}
 
-@media (min-width: 800px) {
+/* border bottom of image */
+@media (max-width: 550px) {
+	.crew-container {
+		align-content: start;
+	}
+	.crew-image {
+		position: relative;
+	}
+	.crew-image::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		background-color: #383b4b;
+		left: 0;
+	}
+}
+
+/* tablet layout */
+@media (min-width: 550px) {
+	.crew-container {
+		padding-bottom: 0;
+	}
 	.crew-title {
-		width: max-content;
+		grid-area: title;
+		justify-self: start;
+		padding-bottom: 2rem;
+	}
+	.crew-image {
+		grid-area: content;
+		align-self: end;
+	}
+	.crew-nav {
+		grid-area: site-nav;
+	}
+	.crew-content {
+		grid-area: image;
+	}
+}
+
+/* desktop layout */
+@media (min-width: 800px) {
+	.dot-indicators > * {
+		padding: 7.25px;
 	}
 	.crew-container {
 		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
-				2rem,
+				1rem,
 				1fr
 			);
-		gap: 0 2rem;
-
-		align-items: end;
 		text-align: left;
+		justify-items: start;
 	}
-	.crew-container > *:first-child {
-		grid-column: 2;
+	.crew-container {
+		grid-template-areas:
+			'. title image .'
+			'. content image .'
+			'. site-nav image .';
+	}
+	.crew-title {
+		grid-area: title;
+		min-width: max-content;
+	}
+	.crew-image {
+		grid-area: image;
+		max-width: 100%;
+		justify-self: center;
+	}
+	.crew-image img {
+		max-width: 100%;
+	}
+	.crew-nav {
+		--dot-gap: 1.5rem;
+		grid-area: site-nav;
 		align-self: start;
 	}
-	.crew-container > *:last-child {
-		grid-column: 3;
-		justify-self: end;
-		margin-bottom: 0;
+	.crew-content {
+		grid-area: content;
 	}
 }
