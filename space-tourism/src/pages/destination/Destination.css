@@ -94,7 +94,7 @@
 .destination-right {
 	grid-area: content;
 }
-@media (min-width: 560px) {
+@media (min-width: 550px) {
 	.dest-title {
 		justify-self: start;
 		margin-top: 2rem;
@@ -107,11 +107,10 @@
 
 @media (min-width: 800px) {
 	.des-container {
-		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
-				2rem,
+		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
+				1rem,
 				1fr
 			);
-		gap: 0 2rem;
 		place-content: center;
 		text-align: left;
 	}
