@@ -1,0 +1,131 @@
+/* Typography */
+.tech-title span {
+	color: rgba(var(--clr-text-white), 0.25);
+	font-weight: 700;
+	margin-right: 1.75rem;
+}
+
+.tech-info {
+	font-family: var(--ff-belle);
+	font-size: var(--fs-700);
+	text-transform: uppercase;
+}
+.tech-info span {
+	display: block;
+	letter-spacing: 2.36px;
+	color: rgb(var(--clr-text-blue));
+	font-size: var(--fs-300);
+	margin-bottom: 0.5rem;
+}
+.tech-desc {
+	text-transform: none;
+	margin-top: 1rem;
+	padding-inline: 1rem;
+}
+
+/* sub-navigatio */
+.number-indicators > * {
+	display: grid;
+	font-size: var(--fs-role);
+	font-family: var(--ff-belle);
+	color: rgb(var(--clr-text-white));
+	background-color: rgb(var(--clr-main-bg));
+	cursor: pointer;
+	border: 0;
+	border: 1px solid rgba(var(--clr-text-white), 0.25);
+	border-radius: 50%;
+	aspect-ratio: 1;
+	place-content: center;
+	padding: 1em;
+}
+
+.number-indicators > .active,
+.number-indicators > [aria-selected='true'] {
+	color: rgb(var(--clr-main-bg));
+	background-color: rgb(var(--clr-text-white));
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+	border-color: rgba(var(--clr-text-white), 1);
+}
+
+/* grid */
+.tech-image2 {
+	display: none;
+}
+.tech-container {
+	--flow-space: 2rem;
+	display: grid;
+	text-align: center;
+	place-items: center;
+}
+.tech-container {
+	grid-template-areas:
+		'title'
+		'image'
+		'site-nav'
+		'content';
+	padding-bottom: 3rem;
+}
+.tech-title {
+	grid-area: title;
+}
+.tech-image {
+	grid-area: image;
+	padding-inline: 0;
+	object-fit: cover;
+	width: 100%;
+}
+.tech-nav {
+	grid-area: site-nav;
+}
+.tech-content {
+	grid-area: content;
+}
+@media (max-width: 550px) {
+	.tech-container {
+		align-content: start;
+	}
+}
+@media (min-width: 550px) {
+	.tech-title {
+		justify-self: start;
+		margin-top: 2rem;
+	}
+	.tech-content {
+		max-width: 500px;
+	}
+}
+@media (min-width: 900px) {
+	.tech-image {
+		display: none;
+	}
+	.tech-container {
+		grid-template-columns:
+			minmax(2rem, 1fr) minmax(0, 7rem) minmax(0, 32rem) minmax(0, 20rem)
+			minmax(2rem, 1fr);
+	}
+	.tech-container {
+		grid-template-areas:
+			'. title title title .'
+			'. site-nav content image image'
+			'. site-nav content image image';
+
+		text-align: left;
+		justify-items: start;
+	}
+	.tech-nav {
+		flex-direction: column;
+	}
+	.tech-image2 {
+		display: inline-block;
+		max-width: 100%;
+		grid-area: image;
+		justify-self: end;
+	}
+
+	.tech-content {
+		margin-right: 1rem;
+	}
+}
