@@ -62,6 +62,9 @@ header {
 	.nav-logo {
 		flex-shrink: 0;
 	}
+	.nav-header {
+		margin-top: 2.5rem;
+	}
 	.nav-header::after {
 		content: '';
 		display: block;

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useBgContext } from '../../context/BgContext';
 
 //styles
@@ -9,7 +10,7 @@ export default function Home() {
 
 	useEffect(() => {
 		currentPage.setPage('homePage');
-	}, [currentPage.page]);
+	}, [currentPage]);
 
 	return (
 		<main role="main" className="home-container">
@@ -25,7 +26,9 @@ export default function Home() {
 				</p>
 			</div>
 			<div>
-				<a className="btn-explore">Explore</a>
+				<Link to="/destination" className="btn-explore">
+					Explore
+				</Link>
 			</div>
 		</main>
 	);

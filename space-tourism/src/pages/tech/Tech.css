@@ -22,9 +22,15 @@
 	margin-top: 1rem;
 	padding-inline: 1rem;
 }
-
+.number-indicators button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
 /* sub-navigatio */
+
 .number-indicators > * {
+	line-height: 0px;
 	display: grid;
 	font-size: var(--fs-role);
 	font-family: var(--ff-belle);
@@ -38,7 +44,6 @@
 	place-content: center;
 	padding: 1em;
 }
-
 .number-indicators > .active,
 .number-indicators > [aria-selected='true'] {
 	color: rgb(var(--clr-main-bg));
@@ -127,5 +132,8 @@
 
 	.tech-content {
 		margin-right: 1rem;
+	}
+	.tech-desc {
+		padding-left: 0;
 	}
 }
