@@ -5,7 +5,9 @@
 	--ff-bar-con: 'Barlow Condensed', sans-serif;
 	--ff-belle: 'Bellefair', serif;
 
+	/* letter-spacing */
 	--spacing-big: 2.7px;
+
 	/* font-size */
 	--fs-900: 80px;
 	--fs-800: 56px;
@@ -26,6 +28,7 @@
 @media (min-width: 550px) {
 	:root {
 		--spacing-big: 3.38px;
+
 		--fs-900: 150px;
 		--fs-800: 80px;
 		--fs-700: 40px;
@@ -33,6 +36,7 @@
 		--fs-500: 20px;
 		--fs-400: 16px;
 		--fs-300: 16px;
+
 		--fs-role: 24px;
 		--fs-nav: 14px;
 	}
@@ -41,6 +45,7 @@
 @media (min-width: 800px) {
 	:root {
 		--spacing-big: 4.72px;
+
 		--fs-900: 150px;
 		--fs-800: 100px;
 		--fs-700: 56px;
@@ -137,4 +142,9 @@ a {
 	font-size: var(--fs-400);
 	text-transform: lowercase;
 	line-height: 1.7;
+}
+.main-title span {
+	color: rgba(var(--clr-text-white), 0.25);
+	font-weight: 700;
+	margin-right: 1.75rem;
 }

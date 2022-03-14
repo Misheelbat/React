@@ -1,3 +1,4 @@
+/* Typography */
 .home-content {
 	color: rgb(var(--clr-text-blue));
 	max-width: 450px;
@@ -5,10 +6,13 @@
 .home-title {
 	margin-bottom: 2rem;
 }
-.space {
+.main-title .space {
 	font-size: var(--fs-900);
 	display: block;
 	font-family: var(--ff-belle);
+	margin-right: 0;
+	font-weight: 400;
+	color: white;
 }
 
 /* button */

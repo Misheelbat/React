@@ -1,9 +1,5 @@
 /* Typography */
-.crew-title span {
-	color: rgba(var(--clr-text-white), 0.25);
-	font-weight: 700;
-	margin-right: 1.75rem;
-}
+
 .crew-role {
 	font-family: var(--ff-belle);
 	text-transform: uppercase;
