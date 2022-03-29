@@ -1,0 +1,9 @@
+.home-main {
+	height: 100vh;
+}
+.home-content {
+	text-align: center;
+}
+.home-content h1 {
+	font-size: 64px;
+}
