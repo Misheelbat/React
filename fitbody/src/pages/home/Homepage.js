@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Homepage.css';
 
 export default function Homepage() {
 	return (
-		<main className="container home-main">
-			<section className="home-content">
-				<h1>Create your Habit</h1>
+		<main className="home-main">
+			<section className="home-content flow">
+				<h1>Create your habit</h1>
 				<p>
 					If you believe you can change - if you make it a habit - the change
 					becomes real.
 				</p>
-				<button>Start now</button>
+				<Link className='start-now' to="signup">Start now</Link>
 			</section>
 		</main>
 	);

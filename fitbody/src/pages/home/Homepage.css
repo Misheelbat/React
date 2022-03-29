@@ -1,9 +1,19 @@
 .home-main {
-	height: 100vh;
+	align-self: center;
 }
 .home-content {
-	text-align: center;
+	--flow-space: 3rem;
+	max-width: 400px;
+	font-size: var(--fs-400);
 }
 .home-content h1 {
+	line-height: 1.4;
 	font-size: 64px;
+}
+.start-now {
+	display: inline-block;
+	padding: 10px 5rem;
+	color: white;
+	background-color: #096bff;
+	border-radius: 40px;
 }

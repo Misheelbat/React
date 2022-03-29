@@ -2,13 +2,12 @@
 	--gap: 2rem;
 	justify-content: space-between;
 	font-size: var(--fs-nav);
-	margin-top: 3rem;
+	padding-top: 3rem;
 }
 .sign {
 	margin-left: 2rem;
-	padding: 7px 3rem;
+	padding: 10px 3rem;
 	color: white;
 	background-color: #096bff;
 	border-radius: 40px;
 }
-

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 export default function Navbar() {
 	return (
-		<header className="container">
+		<header>
 			<nav className=" flex main-nav">
 				<ul className="flex">
 					<li>
