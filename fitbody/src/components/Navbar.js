@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HiOutlineMenuAlt4 as Menu, HiOutlineX as Close } from 'react-icons/hi';
 
 import './Navbar.css';
+
 export default function Navbar() {
+	const [menuToggle, setMenuToggle] = useState(false);
+
 	return (
 		<header>
-			<nav className=" flex main-nav">
-				<ul className="flex">
+			<div onClick={() => setMenuToggle(!menuToggle)}>
+				{menuToggle ? (
+					<Close className="menu open" />
+				) : (
+					<Menu className="menu closed" />
+				)}
+			</div>
+			<nav className="flex main-nav">
+				<ul aria-expanded={menuToggle} className="flex nav-links">
 					<li>
 						<NavLink to="/">Home</NavLink>
 					</li>
@@ -21,7 +32,9 @@ export default function Navbar() {
 					</li>
 				</ul>
 				<div className="register">
-					<NavLink to="/login">Log in</NavLink>
+					<NavLink className="login" to="/login">
+						Log in
+					</NavLink>
 					<NavLink className="sign" to="/signup">
 						Sign up
 					</NavLink>

@@ -17,3 +17,8 @@
 	background-color: #096bff;
 	border-radius: 40px;
 }
+.start-now:focus,
+.start-now:hover {
+	background-color: #1d1d1d;
+	color: #f5f5f7;
+}
