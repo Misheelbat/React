@@ -8,13 +8,11 @@ import Programms from './pages/Programms/Programms';
 import Exercises from './pages/exercises/Exercises';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
-import Navbar from './components/Navbar';
 
 function App() {
 	return (
 		<div className="App container">
 			<BrowserRouter>
-				<Navbar />
 				<Routes>
 					<Route path="/" element={<Homepage />} />
 					<Route path="/routines" element={<Routine />} />

@@ -1,0 +1,38 @@
+.exercise {
+	margin-top: 2rem;
+	height: 80vh;
+	display: grid;
+	grid-template-columns: minmax(4rem, 15rem) 1fr;
+}
+.ex-nav {
+	--flow-space: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #161c27;
+	color: white;
+	height: 100%;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+.ex-nav a img {
+	margin-right: 1rem;
+	width: 30px;
+	height: 30px;
+}
+.ex-nav-links a {
+	display: flex;
+	align-items: center;
+	margin-left: 2rem;
+}
+.ex-content {
+	background-color: #fff;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	padding: 2rem;
+}
+#logo {
+	width: 70px;
+	height: 41px;
+	margin-block: 2rem 7rem;
+	align-self: center;
+}

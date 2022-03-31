@@ -2,6 +2,7 @@
 	align-self: center;
 }
 .home-content {
+	margin-top: 10rem;
 	--flow-space: 3rem;
 	max-width: 400px;
 	font-size: var(--fs-400);
