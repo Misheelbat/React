@@ -1,7 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Scrollbar from '../../components/scrollbar/Scrollbar';
 
+//styles
 import './Exercises.css';
+import styles from './Category.module.css';
+
+const muscles = [
+	'Abs',
+	'Arms',
+	'Back',
+	'Calves',
+	'Chest',
+	'Legs',
+	'Shoulders',
+	'Head',
+	'Ankles',
+	'Biceps',
+];
+
 export default function Exercises() {
 	return (
 		<section className="exercise">
@@ -37,11 +54,12 @@ export default function Exercises() {
 				</nav>
 			</header>
 			<main className="ex-content">
-				<div>
-					<input type="text" placeholder="Search" />
+				<div className="flex searchbar">
+					<input className="search-input" type="text" placeholder="Search" />
 					<p>Welcome</p>
 				</div>
 				<h1>Explore our Exercises</h1>
+				<Scrollbar data={muscles} styles={styles} />
 				<div>
 					<p>Please select a category</p>
 					<div>
