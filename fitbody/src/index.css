@@ -65,10 +65,9 @@ input {
 	font-family: 'Montserrat', sans-serif;
 }
 
-
 /* helper classes */
 .container {
-	max-width: 70rem;
+	max-width: 80rem;
 	padding-inline: var(--container-gap, 1rem);
 	margin-right: auto;
 	margin-left: auto;

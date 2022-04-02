@@ -9,13 +9,11 @@ import {
 import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
 
 const SCROLL_AMOUNT = 40;
+
 export default function Scrollbar({ data, styles }) {
 	const [clicked, setClicked] = useState('');
 	const scrollRef = useHorizontalScroll();
 
-	const setActiveClass = (i) => {
-		setClicked(i);
-	};
 	const scroll = (offset) => {
 		scrollRef.current.scrollLeft += offset;
 	};
@@ -27,15 +25,19 @@ export default function Scrollbar({ data, styles }) {
 				className={cx(styles.arrow, styles.left)}
 			/>
 			<ul className={styles.items} ref={scrollRef}>
-				{data.map((item, i) => (
-					<li
-						className={i === clicked ? styles.active : ''}
-						onClick={() => setActiveClass(i)}
-						key={item}
-					>
-						{item}
-					</li>
-				))}
+				{data &&
+					data.map((item) => (
+						<li
+							className={cx(
+								item.name === clicked ? styles.active : '',
+								styles.singleItem
+							)}
+							onClick={() => setClicked(item.name)}
+							key={item.name}
+						>
+							{item.name}
+						</li>
+					))}
 			</ul>
 			<Right
 				onClick={() => scroll(SCROLL_AMOUNT)}

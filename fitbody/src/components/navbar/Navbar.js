@@ -16,8 +16,8 @@ export default function Navbar() {
 					<Menu className="menu closed" />
 				)}
 			</div>
-			<nav className="flex main-nav">
-				<ul aria-expanded={menuToggle} className="flex nav-links">
+			<nav className="flex mainNav">
+				<ul aria-expanded={menuToggle} className="flex navLinks">
 					<li>
 						<NavLink to="/">Home</NavLink>
 					</li>

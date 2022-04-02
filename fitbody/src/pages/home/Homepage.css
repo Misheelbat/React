@@ -1,25 +1,25 @@
-.home-main {
+.homeMain {
 	align-self: center;
 }
-.home-content {
+.homeContent {
 	margin-top: 10rem;
 	--flow-space: 3rem;
 	max-width: 400px;
 	font-size: var(--fs-400);
 }
-.home-content h1 {
+.homeContent h1 {
 	line-height: 1.4;
 	font-size: 64px;
 }
-.start-now {
+.starNow {
 	display: inline-block;
 	padding: 10px 5rem;
 	color: white;
 	background-color: #096bff;
 	border-radius: 10px;
 }
-.start-now:focus,
-.start-now:hover {
+.startNow:focus,
+.startNow:hover {
 	background-color: #1d1d1d;
 	color: #f5f5f7;
 }

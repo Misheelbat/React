@@ -1,0 +1,39 @@
+/* sidebar nav */
+.nav {
+	--flow-space: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #161c27;
+	color: #b8babe;
+	height: 100%;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+.nav a img {
+	margin-right: 1rem;
+	width: 30px;
+	height: 30px;
+}
+.navLinks a {
+	display: flex;
+	align-items: center;
+	margin-left: 2rem;
+}
+.nav .logo {
+	width: 70px;
+	height: 41px;
+	margin-block: 2rem 7rem;
+	align-self: center;
+}
+.flow > * + * {
+	margin-top: var(--flow-space, 1rem);
+}
+/* hover effect */
+.navLinks > * {
+	transition: transform 250ms ease-in-out;
+}
+
+.navLinks > *:hover {
+	color: #05e4c1;
+	transform: translateX(10px);
+}
