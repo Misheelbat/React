@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Scrollbar from '../../components/scrollbar/Scrollbar';
 
-//styles
+// Components
+import Scrollbar from '../../components/scrollbar/Scrollbar';
+import Card from '../../components/card/Card';
+
+// styles
 import './Exercises.css';
 import styles from './Category.module.css';
 
@@ -53,21 +56,21 @@ export default function Exercises() {
 					</ul>
 				</nav>
 			</header>
-			<main className="ex-content">
+			<main className="ex-content flow">
 				<div className="flex searchbar">
 					<input className="search-input" type="text" placeholder="Search" />
 					<p>Welcome</p>
 				</div>
 				<h1>Explore our Exercises</h1>
-				<Scrollbar data={muscles} styles={styles} />
 				<div>
-					<p>Please select a category</p>
-					<div>
-						<div>Muscle</div>
-						<div>Body</div>
-						<div>Equipment</div>
+					<p className="select-category">Please select a category</p>
+					<div className="ex-card-container">
+						<Card name="Muscle groups" imgSrc="./images/muscle.png" />
+						<Card name="Body parts" imgSrc="./images/body.png" />
+						<Card name="Equipments" imgSrc="./images/equipment.png" />
 					</div>
 				</div>
+				<Scrollbar data={muscles} styles={styles} />
 			</main>
 		</section>
 	);
