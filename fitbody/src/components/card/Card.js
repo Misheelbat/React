@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { useCardContext } from '../../hooks/useCardContext';
-import cx from 'classnames';
+import { useFetchData } from '../../hooks/useFetchData';
 
 //styles
 import './Card.css';
 
-export default function Card({ name, imgSrc }) {
+export default function Card({ name, imgSrc, api }) {
 	const { selected, setSelected } = useCardContext();
-	const handleClick = () => {
+	const { data, refetch } = useFetchData(api);
+	console.log(data);
+
+	const handleClick = async () => {
+		await refetch({ cancelRefetch: true });
 		console.log('clicked');
 		setSelected(name);
 	};

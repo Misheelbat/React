@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 // Components
 import Scrollbar from '../../components/scrollbar/Scrollbar';
@@ -10,9 +10,11 @@ import './Exercises.css';
 import scrollbarStyle from '../../components/scrollbar/Category.module.css';
 import sidebarStyle from '../../components/sidebar/SidebarHome.module.css';
 
+const muscles = 'https://wger.de/api/v2/muscle/';
+const equipment = 'https://wger.de/api/v2/equipment/';
+const bodyPart = 'https://wger.de/api/v2/exercisecategory/';
+
 export default function Exercises() {
-	const [active, setActive] = useState(true);
-	
 	return (
 		<section className="exercise">
 			<Sidebar styles={sidebarStyle} />
@@ -26,9 +28,21 @@ export default function Exercises() {
 					<div>
 						<p className="select-category">Please select a category</p>
 						<div className="ex-card-container">
-							<Card name="Muscle groups" imgSrc="./images/muscle.png" />
-							<Card name="Body parts" imgSrc="./images/body.png" />
-							<Card name="Equipments" imgSrc="./images/equipment.png" />
+							<Card
+								api={muscles}
+								name="Muscle groups"
+								imgSrc="./images/muscle.png"
+							/>
+							<Card
+								api={bodyPart}
+								name="Body parts"
+								imgSrc="./images/body.png"
+							/>
+							<Card
+								api={equipment}
+								name="Equipments"
+								imgSrc="./images/equipment.png"
+							/>
 						</div>
 					</div>
 					{/* <Scrollbar data={data} styles={scrollbarStyle} /> */}
