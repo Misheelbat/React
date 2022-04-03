@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { CardContextProvider } from './context/cardContext';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/login" element={<Login />} />
 						</Routes>
+						<ReactQueryDevtools />
 					</CardContextProvider>
 				</QueryClientProvider>
 			</BrowserRouter>

@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+
+// Hooks
+import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
+import { useCardContext } from '../../hooks/useCardContext';
+
+// Components
 import {
 	IoIosArrowDropleftCircle as Left,
 	IoIosArrowDroprightCircle as Right,
 } from 'react-icons/io';
-
-//Hooks
-import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
 
 const SCROLL_AMOUNT = 40;
 
 export default function Scrollbar({ data, styles }) {
 	const [clicked, setClicked] = useState('');
 	const scrollRef = useHorizontalScroll();
+	const { selected, setSelected } = useCardContext();
 
 	const scroll = (offset) => {
 		scrollRef.current.scrollLeft += offset;
 	};
-
+	const handleClick = (item) => {
+		setClicked(item.name);
+		setSelected({ ...selected, subCategory: item.id });
+	};
 	return (
 		<div className={styles.ul}>
 			<Left
@@ -32,7 +39,7 @@ export default function Scrollbar({ data, styles }) {
 								item.name === clicked ? styles.active : '',
 								styles.singleItem
 							)}
-							onClick={() => setClicked(item.name)}
+							onClick={() => handleClick(item)}
 							key={item.name}
 						>
 							{item.name}

@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import { useCardContext } from '../../hooks/useCardContext';
-import { useFetchData } from '../../hooks/useFetchData';
+import React from 'react';
 
-//styles
+// Hooks
+import { useCardContext } from '../../hooks/useCardContext';
+
+// Styles
 import './Card.css';
 
 export default function Card({ name, imgSrc, api }) {
 	const { selected, setSelected } = useCardContext();
-	const { data, refetch } = useFetchData(api);
-	console.log(data);
 
-	const handleClick = async () => {
-		await refetch({ cancelRefetch: true });
-		console.log('clicked');
-		setSelected(name);
+	const handleClick = () => {
+		setSelected({ category: api, subCategory: '' });
 	};
 
 	return (
 		<div
-			className={selected === name ? 'card cActive' : 'card'}
+			className={selected.category === api ? 'card cActive' : 'card'}
 			onClick={handleClick}
 		>
 			<div className="card-img-container">
