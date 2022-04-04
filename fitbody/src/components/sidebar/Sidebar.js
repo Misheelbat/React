@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
-export default function Sidebar({ styles }) {
+import styles from './SidebarHome.module.css';
+
+export default function Sidebar() {
 	return (
 		<header>
 			<nav className={styles.nav}>

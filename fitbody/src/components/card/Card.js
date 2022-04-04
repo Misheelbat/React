@@ -1,21 +1,22 @@
 import React from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectMainCategory } from '../features/category/categorySlice';
 // Hooks
-import { useCardContext } from '../../hooks/useCardContext';
 
 // Styles
 import './Card.css';
 
 export default function Card({ name, imgSrc, api }) {
-	const { selected, setSelected } = useCardContext();
+	const { mainCat } = useSelector((state) => state.category);
+	const dispatch = useDispatch();
 
 	const handleClick = () => {
-		setSelected({ category: api, subCategory: '' });
+		dispatch(selectMainCategory(api));
 	};
 
 	return (
 		<div
-			className={selected.category === api ? 'card cActive' : 'card'}
+			className={mainCat === api ? 'card cActive' : 'card'}
 			onClick={handleClick}
 		>
 			<div className="card-img-container">

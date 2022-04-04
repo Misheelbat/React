@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { selectSubCategory } from '../features/category/categorySlice';
 import cx from 'classnames';
 
 // Hooks
 import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
-import { useCardContext } from '../../hooks/useCardContext';
 
 // Components
 import {
@@ -12,19 +13,20 @@ import {
 } from 'react-icons/io';
 
 const SCROLL_AMOUNT = 40;
-
 export default function Scrollbar({ data, styles }) {
 	const [clicked, setClicked] = useState('');
+	const dispatch = useDispatch();
 	const scrollRef = useHorizontalScroll();
-	const { selected, setSelected } = useCardContext();
 
 	const scroll = (offset) => {
 		scrollRef.current.scrollLeft += offset;
 	};
+
 	const handleClick = (item) => {
 		setClicked(item.name);
-		setSelected({ ...selected, subCategory: item.id });
+		dispatch(selectSubCategory(item));
 	};
+
 	return (
 		<div className={styles.ul}>
 			<Left

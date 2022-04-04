@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 export const getData = async (URL) => {
@@ -6,12 +7,16 @@ export const getData = async (URL) => {
 	const data = res.data;
 	return data;
 };
-export const useCategory = (api) => {
-	const URL = `https://wger.de/api/v2/${api}`;
-	const query = useQuery(['api', api], () => getData(URL), {
+
+export const useCategory = () => {
+	const { mainCat } = useSelector((state) => state.category);
+	const URL = `https://wger.de/api/v2/${mainCat}`;
+
+	const query = useQuery(['main', mainCat], () => getData(URL), {
 		refetchOnWindowFocus: false,
-		enabled: Boolean(api),
+		enabled: Boolean(mainCat),
 		staleTime: Infinity,
 	});
+
 	return query;
 };

@@ -2,7 +2,6 @@ import React from 'react';
 
 // Hooks
 import { useCategory } from '../../hooks/useCategory';
-import { useCardContext } from '../../hooks/useCardContext';
 
 // Components
 import Scrollbar from '../../components/scrollbar/Scrollbar';
@@ -13,15 +12,13 @@ import ExInfo from './exerciseInfo/ExInfo';
 // styles
 import './Exercises.css';
 import scrollbarStyle from '../../components/scrollbar/Category.module.css';
-import sidebarStyle from '../../components/sidebar/SidebarHome.module.css';
 
 export default function Exercises() {
-	const { selected } = useCardContext();
-	const { data } = useCategory(selected.category);
+	const { data } = useCategory();
 
 	return (
 		<section className="exercise">
-			<Sidebar styles={sidebarStyle} />
+			<Sidebar />
 			<main className="ex-content">
 				<div className="flow ex-container">
 					<div className="flex searchbar">
