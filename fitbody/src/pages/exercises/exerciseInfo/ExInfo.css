@@ -1,6 +1,13 @@
 .muscles {
+	display: block;
 	width: 150px;
 	height: 276px;
 	background-size: 150px;
 	background-repeat: no-repeat;
+}
+.info-container {
+	--flow-space: 3rem;
+	background-color: #f6f7f9;
+	padding: 1rem;
+	border-radius: 1rem;
 }

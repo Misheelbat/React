@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+picture {
+	margin: 0;
+	font-weight: 400;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: inherit;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.App {
+	display: grid;
+	grid-template-rows: 5rem 1fr;
+	grid-template-columns: 5rem 1fr;
+	height: 100vh;
+}
