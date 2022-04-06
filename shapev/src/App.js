@@ -1,7 +1,7 @@
 import Exercise from './pages/exercise/Exercise';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import Searchbar from './components/navbar/search/Searchbar';
+import Searchbar from './components/search/Searchbar';
 
 import './App.css';
 
