@@ -4,17 +4,17 @@
 	box-sizing: border-box;
 }
 :root {
-	--bg-main: rgb(19, 22, 38);
-	--clr-border: rgb(28, 31, 53);
+	--clr--primary-100: #6e41e2;
 
-	--bg-grey-svg: invert(46%) sepia(1%) saturate(2396%) hue-rotate(202deg)
-		brightness(92%) contrast(88%);
+	--bg-blue-svg: invert(32%) sepia(25%) saturate(4163%) hue-rotate(219deg)
+		brightness(110%) contrast(90%);
 	--bg-white-svg: brightness(0) saturate(100%) invert(100%) sepia(6%)
 		saturate(7485%) hue-rotate(292deg) brightness(121%) contrast(99%);
 }
 
 html {
 	font-size: 16px;
+	line-height: 1.6;
 }
 body,
 h1,
@@ -46,9 +46,16 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+input,
+textarea {
+	margin: 0;
+	padding: 0;
+}
+
 .App {
 	display: grid;
-	grid-template-rows: 5rem 1fr;
-	grid-template-columns: 5rem 1fr;
 	height: 100vh;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	grid-template-columns: min-content 40px 1fr;
+	background-color: #f0f3f8;
 }

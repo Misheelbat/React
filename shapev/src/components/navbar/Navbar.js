@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
 export default function Navbar() {
+	const [expanded, setExpanded] = useState(false);
+	const handleClick = () => {
+		console.log(expanded);
+		setExpanded(!expanded);
+	};
 	return (
-		<nav className={styles.navbar}>
-			<div className={styles.logo}>
-				<img src="/images/logo.png" alt="logo" />
-			</div>
+		<nav
+			data-expanded={expanded}
+			className={styles.navbar}
+			onClick={handleClick}
+		>
 			<ul className={styles.navLinks}>
 				<li>
 					<NavLink to="/">
