@@ -6,8 +6,9 @@
 :root {
 	--clr--primary-100: #6e41e2;
 
-	--bg-blue-svg: invert(32%) sepia(25%) saturate(4163%) hue-rotate(219deg)
-		brightness(110%) contrast(90%);
+	--bg-main-100: #f0f3f8;
+	--bg-blue-svg: brightness(0) saturate(100%) invert(27%) sepia(56%)
+		saturate(5276%) hue-rotate(249deg) brightness(92%) contrast(92%);
 	--bg-white-svg: brightness(0) saturate(100%) invert(100%) sepia(6%)
 		saturate(7485%) hue-rotate(292deg) brightness(121%) contrast(99%);
 }
@@ -53,9 +54,5 @@ textarea {
 }
 
 .App {
-	display: grid;
-	height: 100vh;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
-	grid-template-columns: min-content 40px 1fr;
-	background-color: #f0f3f8;
 }

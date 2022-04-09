@@ -1,0 +1,36 @@
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: minmax(5rem, 7rem) 1fr;
+}
+.content {
+	grid-column: 2/-1;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+}
+
+section {
+	margin-inline: 1rem;
+	background-color: rebeccapurple;
+	grid-column: 1/7;
+	max-width: 750px;
+	justify-self: center;
+	width: 100%;
+}
+.menuBtn {
+	top: 1rem;
+	left: 0.5rem;
+	font-size: 2rem;
+	border: 0;
+	position: absolute;
+	background-color: transparent;
+}
+@media (max-width: 1100px) {
+	.container {
+		padding-inline: 0.5rem;
+	}
+	.content {
+		grid-column: 1/-1;
+	}
+}

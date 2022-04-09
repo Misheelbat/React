@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 import styles from './Navbar.module.css';
+
 export default function Navbar() {
-	const [expanded, setExpanded] = useState(false);
-	const handleClick = () => {
-		console.log(expanded);
-		setExpanded(!expanded);
-	};
+	const [menuOpen, setMenuOpen] = useState(false);
 	return (
-		<nav
-			data-expanded={expanded}
-			className={styles.navbar}
-			onClick={handleClick}
-		>
+		<nav data-menuOpen={menuOpen} className={styles.navbar}>
+			<button className={styles.menu}>
+				<HiMenu />
+			</button>
 			<ul className={styles.navLinks}>
 				<li>
 					<NavLink to="/">

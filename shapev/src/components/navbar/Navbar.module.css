@@ -1,16 +1,14 @@
 .navbar {
-	width: 160px;
 	height: 100%;
-	background-color: #fff;
-	grid-column: 1 / 3;
-	grid-row: 1;
-	transition: width 250ms ease-in, border-radius 250ms ease-in;
+	background-color: red;
 }
 .navLinks {
-	padding-top: 4rem;
 	display: flex;
 	flex-direction: column;
-	padding-left: 1.75rem;
+	align-items: center;
+}
+.navLinks li:first-child {
+	padding-block: 3rem 7rem;
 }
 
 .navLinks > * + * {
@@ -19,7 +17,7 @@
 .navLinks a {
 	display: inline-block;
 	position: relative;
-	padding: 1rem;
+	padding: 0.8rem 1rem;
 	border-radius: 10px;
 }
 .navLinks a img {
@@ -27,30 +25,20 @@
 	filter: var(--bg-blue-svg);
 }
 
-.navLinks a:hover {
-	background-color: var(--clr--primary-100);
-}
-.navLinks a:hover img {
-	filter: var(--bg-white-svg);
-}
-.navbar[data-expanded='true'] .navLinks a span {
-	position: absolute;
-	top: 50%;
-	transform: translate(3.3rem, -50%);
-}
-
-.navbar[data-expanded='false'] .navLinks a span {
+.navLinks a span {
 	display: none;
 	position: absolute;
 	color: white;
 	background-color: var(--clr--primary-100);
-	padding: 0.6rem 0.8rem;
-	border-radius: 5px;
 	top: 50%;
+	border-radius: 5px;
+	padding: 0.6rem 0.8rem;
 	transform: translate(4rem, -50%);
 	z-index: 15;
+	letter-spacing: 1px;
 }
-.navbar[data-expanded='false'] .navLinks a span::before {
+/* triangle facing left */
+.navLinks a span::before {
 	content: '';
 	height: 0;
 	width: 0;
@@ -63,13 +51,40 @@
 	transform: translateY(-50%);
 }
 
-.navbar[data-expanded='false'] .navLinks a:hover span {
+/* hover effects */
+.navLinks a:hover span {
 	display: block;
 }
+.navLinks a:hover,
+a[class='active'] {
+	background-color: var(--clr--primary-100);
+}
+.navLinks a:hover img,
+a[class='active'] img {
+	filter: var(--bg-white-svg);
+}
 
-/* navbar expand */
-.navbar[data-expanded='true'] {
-	width: 200px;
-	border-radius: 0 20px 20px 0;
-	grid-column: 1/2;
+/* menu button */
+
+.menu {
+	position: absolute;
+	top: 1rem;
+	left: 0.5rem;
+	background-color: transparent;
+	border: 0;
+	font-size: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+	.navbar {
+		position: absolute;
+		transform: translateX(-150%);
+		transition: transform 500ms ease-out;
+	}
+	.navbar[data-menuOpen='true'] {
+		transform: translateX(0);
+	}
+	.menu {
+		transform: translateX(250%);
+	}
 }
