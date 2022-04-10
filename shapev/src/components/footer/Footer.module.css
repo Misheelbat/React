@@ -1,0 +1,19 @@
+.left,
+.right {
+	width: 1.7rem;
+	height: 1.7rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 0;
+	background-color: transparent;
+}
+.left {
+	background-image: url('/public/images/arrowLeft.svg');
+}
+.right {
+	background-image: url('/public/images/arrowRight.svg');
+}
+.footerBtn {
+	margin-inline: auto;
+	padding-block: 2rem;
+}

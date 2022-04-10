@@ -6,10 +6,11 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
+
 	return (
 		<nav data-menuOpen={menuOpen} className={styles.navbar}>
-			<button className={styles.menu}>
-				<HiMenu />
+			<button onClick={() => setMenuOpen(!menuOpen)} className={styles.menu}>
+				{menuOpen ? <HiX /> : <HiMenu />}
 			</button>
 			<ul className={styles.navLinks}>
 				<li>

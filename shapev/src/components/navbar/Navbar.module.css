@@ -73,18 +73,19 @@ a[class='active'] img {
 	background-color: transparent;
 	border: 0;
 	font-size: 1.5rem;
+	cursor: pointer;
 }
 
 @media (max-width: 1100px) {
 	.navbar {
 		position: absolute;
-		transform: translateX(-150%);
+		transform: translateX(-100%);
 		transition: transform 500ms ease-out;
 	}
 	.navbar[data-menuOpen='true'] {
 		transform: translateX(0);
 	}
 	.menu {
-		transform: translateX(250%);
+		transform: translateX(7.5rem);
 	}
 }

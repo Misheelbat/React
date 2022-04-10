@@ -1,4 +1,10 @@
-main {
+.containerMain {
 	background-color: white;
 	border-radius: 1.5rem;
+	padding-block: 4.5rem;
+}
+@media (max-width: 700px) {
+	.containerMain {
+		border-radius: 0;
+	}
 }

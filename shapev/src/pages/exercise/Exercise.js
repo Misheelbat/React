@@ -9,11 +9,11 @@ export default function Exercise() {
 	return (
 		<>
 			<Main>
+				<div className={styles.mainHeader}>
+					<h1>Workouts</h1>
+					<p>9 out of 27</p>
+				</div>
 				<div className={styles.mainContent}>
-					<div className={styles.mainHeader}>
-						<h1>Workouts</h1>
-						<p>9 out of 27</p>
-					</div>
 					<Card />
 					<Card />
 					<Card />

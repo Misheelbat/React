@@ -3,7 +3,6 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 1.25rem;
-	padding-block: 4.5rem;
 }
 .mainHeader {
 	padding-inline: 2.5rem;
@@ -22,4 +21,5 @@
 	font-size: 0.875rem;
 	color: #86898d;
 	align-self: end;
+	padding-block: 1rem;
 }

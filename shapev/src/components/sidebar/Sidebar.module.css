@@ -1,4 +1,9 @@
-aside {
+.containerSide {
 	background-color: white;
 	border-radius: 2.5rem;
+}
+@media (max-width:700px){
+	.containerSide{
+		border-radius: 25px 25px 0 0;
+	}
 }
