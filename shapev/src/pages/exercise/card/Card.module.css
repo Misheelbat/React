@@ -1,5 +1,6 @@
 .card {
+	border-radius: 0.5rem;
 	width: 350px;
 	height: 200px;
-	background-color: lightsalmon;
+	border: 1px solid #6e41e2;
 }

@@ -1,6 +1,6 @@
 .navbar {
-	height: 100%;
-	background-color: red;
+	width: 130px;
+	background-color: white;
 }
 .navLinks {
 	display: flex;

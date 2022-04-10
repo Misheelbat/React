@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import Navbar from '../navbar/Navbar';
+import Header from '../header/Header';
 
 import styles from './Layout.module.css';
 
@@ -8,7 +10,7 @@ export default function Content({ children }) {
 		<div className={styles.container}>
 			<Navbar />
 			<div className={styles.content}>
-				<section>this is user</section>
+				<Header />
 				{children}
 			</div>
 		</div>
