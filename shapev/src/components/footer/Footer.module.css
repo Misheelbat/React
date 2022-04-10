@@ -6,6 +6,7 @@
 	background-size: cover;
 	border: 0;
 	background-color: transparent;
+	cursor: pointer;
 }
 .left {
 	background-image: url('/public/images/arrowLeft.svg');
@@ -16,4 +17,12 @@
 .footerBtn {
 	margin-inline: auto;
 	padding-block: 2rem;
+}
+.left:hover,
+.right:hover {
+	opacity: 0.7;
+}
+.left:disabled,
+.right:disabled {
+	opacity: 0.3;
 }

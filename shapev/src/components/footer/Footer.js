@@ -5,11 +5,11 @@ import {
 } from 'react-icons/md';
 
 import styles from './Footer.module.css';
-export default function Footer() {
+export default function Footer({ isDisabled }) {
 	return (
 		<footer className={styles.footerBtn}>
-			<button className={styles.left}></button>
-			<button className={styles.right}></button>
+			<button disabled={isDisabled} className={styles.left}></button>
+			<button disabled={isDisabled} className={styles.right}></button>
 		</footer>
 	);
 }

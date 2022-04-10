@@ -1,0 +1,21 @@
+.btn {
+	border: 0;
+	padding: 0.625rem 1.25rem;
+	background-color: #6e41e2;
+	color: white;
+	border-radius: 4px;
+	line-height: 150%;
+}
+.btn:hover {
+	background-color: #5835b0;
+}
+.btn:focus {
+	border: 2px solid rgba(18, 18, 18, 0.48);
+	outline: 0;
+}
+.btn:active {
+	background-color: #472c8a;
+}
+.btn:disabled {
+	background-color: #e3daf9;
+}

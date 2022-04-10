@@ -8,7 +8,7 @@ export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	return (
-		<nav data-menuOpen={menuOpen} className={styles.navbar}>
+		<nav data-menu-open={menuOpen} className={styles.navbar}>
 			<button onClick={() => setMenuOpen(!menuOpen)} className={styles.menu}>
 				{menuOpen ? <HiX /> : <HiMenu />}
 			</button>
