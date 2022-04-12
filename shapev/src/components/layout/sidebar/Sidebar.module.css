@@ -1,9 +1,10 @@
 .containerSide {
 	background-color: white;
 	border-radius: 2.5rem;
+	padding: 0.8rem;
 }
-@media (max-width:700px){
-	.containerSide{
+@media (max-width: 899px) {
+	.containerSide {
 		border-radius: 25px 25px 0 0;
 	}
 }

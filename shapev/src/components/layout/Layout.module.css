@@ -7,13 +7,13 @@
 .content {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr minmax(250px, 25%);
+	grid-template-columns: 1fr minmax(280px, 30%);
 	grid-template-areas:
-		'user user  side'
-		'content content side'
-		'content content side'
-		'content content side'
-		'footer footer side';
+		'user side'
+		'content side'
+		'content side'
+		'content side'
+		'footer side';
 }
 
 header {
@@ -22,6 +22,7 @@ header {
 
 main {
 	grid-area: content;
+	min-height: 900px;
 }
 
 header,
@@ -41,7 +42,7 @@ footer {
 	grid-area: footer;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 	.content {
 		grid-template-areas:
 			'user user user'

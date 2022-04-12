@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 1.25rem;
+	gap: 1rem;
 }
 .mainHeader {
 	padding-inline: 2.5rem;

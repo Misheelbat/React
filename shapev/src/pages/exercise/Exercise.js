@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Main from '../../components/layout/mainContent/Main';
 import Sidebar from '../../components/layout/sidebar/Sidebar';
 import Card from './card/Card';
-import Main from '../../components/layout/mainContent/Main';
+import Dropdown from './../../components/layout/sidebar/dropdown/Dropdown';
 
 import styles from './Exercise.module.css';
+
 export default function Exercise() {
 	return (
 		<>
@@ -22,7 +24,9 @@ export default function Exercise() {
 					<Card />
 				</div>
 			</Main>
-			<Sidebar>sidebar</Sidebar>
+			<Sidebar>
+				<Dropdown />
+			</Sidebar>
 		</>
 	);
 }
