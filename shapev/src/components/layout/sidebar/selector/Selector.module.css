@@ -1,0 +1,29 @@
+.selector {
+	display: flex;
+	margin-top: 7rem;
+	border-radius: 8px;
+	margin-inline: 0.5rem;
+	background-color: #e0e0e0;
+	padding: 2px;
+}
+.selector input {
+	display: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.selector > * {
+	flex-basis: 100%;
+	text-align: center;
+}
+.selector label {
+	display: inline-block;
+	padding-block: 0.5rem;
+	width: 100%;
+	border-radius: 7px;
+	color: #212121;
+}
+.selector :checked + label {
+	background-color: white;
+	color: #6e41e2;
+}
