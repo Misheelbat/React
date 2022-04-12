@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Sidebar from '../../components/sidebar/Sidebar';
-import Main from '../../components/pageMain/Main';
+import Sidebar from '../../components/layout/sidebar/Sidebar';
+import Main from '../../components/layout/mainContent/Main';
 
 import styles from './HomePage.module.css';
-
 export default function HomePage() {
 	return (
 		<>

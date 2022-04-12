@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Sidebar from '../../components/sidebar/Sidebar';
+import Sidebar from '../../components/layout/sidebar/Sidebar';
 import Card from './card/Card';
-import Main from '../../components/pageMain/Main';
+import Main from '../../components/layout/mainContent/Main';
 
 import styles from './Exercise.module.css';
 export default function Exercise() {

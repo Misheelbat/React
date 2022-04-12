@@ -1,7 +1,7 @@
 .header {
 	padding-block: 3rem 2rem;
 	display: flex;
-	justify-content: end;
+	justify-content: flex-end;
 	align-items: center;
 }
 .header img {
