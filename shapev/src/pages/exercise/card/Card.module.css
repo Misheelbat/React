@@ -3,4 +3,30 @@
 	width: 350px;
 	height: 200px;
 	border: 1px solid #6e41e2;
+	display: flex;
+}
+.cardInfo {
+	font-size: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-block: 1rem;
+	align-items: start;
+}
+
+.cardExerciseImg {
+	height: 150px;
+	max-width: 185px;
+	object-fit: cover;
+	align-self: center;
+	justify-self: start;
+	margin-inline: 0.5rem;
+}
+.cardItems {
+	display: flex;
+	margin-bottom: 1rem;
+}
+.cardItems img {
+	align-self: start;
+	margin-right: 0.5rem;
 }
