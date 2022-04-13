@@ -1,10 +1,10 @@
 .selector {
 	display: flex;
-	margin-top: 7rem;
-	margin-bottom: 4rem;
-	border-radius: 8px;
-	background-color: #e0e0e0;
 	padding: 2px;
+	margin-top: 7rem;
+	border-radius: 8px;
+	margin-bottom: 4rem;
+	background-color: #e0e0e0;
 }
 .selector input {
 	display: none;
@@ -24,9 +24,11 @@
 	color: #212121;
 }
 .selector label:hover {
-	background-color: #f1f1f1;
+	color: #6e41e2;
+	background-color: #eeecec;
 }
 .selector :checked + label {
 	background-color: white;
 	color: #6e41e2;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
