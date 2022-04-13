@@ -23,6 +23,7 @@ export default function Dropdown() {
 				<div className={styles.itemGroup}>
 					{drop.map((item, i) => (
 						<p
+							key={i}
 							onClick={() => setActive(i)}
 							className={cx(styles.item, { [styles.active]: active === i })}
 						>
