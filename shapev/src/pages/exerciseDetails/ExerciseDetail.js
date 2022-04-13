@@ -1,8 +1,12 @@
 import React from 'react';
+
 import Main from '../../components/layout/mainContent/Main';
 import Sidebar from '../../components/layout/sidebar/Sidebar';
 import Button from '../../components/button/Button';
+import Tags from './tags/Tags';
+
 import styles from './ExerciseDetail.module.css';
+const dummyItems = ['Tags', 'Tags', 'Tags'];
 export default function ExerciseDetail() {
 	return (
 		<>
@@ -10,8 +14,14 @@ export default function ExerciseDetail() {
 				<Button>adde me</Button>
 				<div className={styles.details}>
 					<h1>Bench Press</h1>
-					<div className={styles.category}>Category:</div>
-					<div className={styles.muscles}>Muscles:</div>
+					<div className={styles.category}>
+						<p>Category:</p>
+						<Tags items={dummyItems} />
+					</div>
+					<div className={styles.muscles}>
+						<p>Muscles:</p>
+						<Tags items={dummyItems} />
+					</div>
 					<div className={styles.illust}>
 						<img src="/images/card/card_img.png" />
 					</div>
