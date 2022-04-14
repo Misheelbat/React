@@ -3,7 +3,6 @@
 	padding: 0.5rem 0;
 	width: min-content;
 	border-bottom: 2px solid #6e41e2;
-	margin-bottom: 2rem;
 }
 .item {
 	cursor: pointer;
@@ -29,9 +28,10 @@
 	position: absolute;
 	right: 1rem;
 }
+
 .itemGroup {
-	max-height: 300px;
 	overflow: auto;
+	max-height: 300px;
 }
 /* scrollbar style */
 .itemGroup {
@@ -74,6 +74,12 @@
 }
 
 @media (min-width: 899px) {
+	.itemGroup[data-split='true'] {
+		max-height: 300px;
+	}
+	.itemGroup[data-split='false'] {
+		max-height: 100%;
+	}
 	.muscularSystemContainer {
 		margin-top: 3rem;
 		padding: 4rem 2rem;

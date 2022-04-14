@@ -14,13 +14,13 @@ const drop = [
 	'Calves',
 	'Shoulders',
 ];
-export default function Dropdown() {
+export default function Dropdown({ split }) {
 	const [active, setActive] = useState(0);
 	return (
 		<div>
 			<h3 className={styles.title}>Muscles:</h3>
 			<div className={styles.dropdown}>
-				<div className={styles.itemGroup}>
+				<div data-split={split} className={styles.itemGroup}>
 					{drop.map((item, i) => (
 						<p
 							key={i}
@@ -31,9 +31,11 @@ export default function Dropdown() {
 						</p>
 					))}
 				</div>
-				<div className={styles.muscularSystemContainer}>
-					<img src="/images/muscles/front.svg" alt="muscular system" />
-				</div>
+				{split && (
+					<div className={styles.muscularSystemContainer}>
+						<img src="/images/muscles/front.svg" alt="muscular system" />
+					</div>
+				)}
 			</div>
 		</div>
 	);

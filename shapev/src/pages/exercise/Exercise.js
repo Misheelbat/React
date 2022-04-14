@@ -25,7 +25,7 @@ export default function Exercise() {
 				</div>
 			</Main>
 			<Sidebar>
-				<Dropdown />
+				<Dropdown split={true} />
 			</Sidebar>
 		</>
 	);
