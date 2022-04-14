@@ -11,7 +11,7 @@ export default function ExerciseDetail() {
 	return (
 		<>
 			<Main>
-				<Button>adde me</Button>
+				<Button>add me</Button>
 				<div className={styles.details}>
 					<h1>Bench Press</h1>
 					<div className={styles.category}>
