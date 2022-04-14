@@ -24,11 +24,11 @@
 	color: #212121;
 }
 .selector label:hover {
-	color: #6e41e2;
+	color: var(--clr--primary-100);
 	background-color: #eeecec;
 }
 .selector :checked + label {
 	background-color: white;
-	color: #6e41e2;
+	color: var(--clr--primary-100);
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
