@@ -2,7 +2,7 @@
 	display: block;
 	padding: 0.5rem 0;
 	width: min-content;
-	border-bottom: 2px solid #6e41e2;
+	border-bottom: 2px solid var(--clr--primary-100);
 	margin-bottom: 1rem;
 }
 .selector {
