@@ -55,6 +55,7 @@
 }
 
 .muscularSystemContainer {
+	position: relative;
 	display: grid;
 	place-content: center;
 	margin-top: 4.5rem;

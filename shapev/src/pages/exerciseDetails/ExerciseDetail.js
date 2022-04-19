@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Main from '../../components/layout/mainContent/Main';
-import Sidebar from '../../components/layout/sidebar/Sidebar';
-import Button from '../../components/button/Button';
-import Dropdown from '../../components/layout/sidebar/dropdown/Dropdown';
+import Main from 'components/layout/mainContent/Main';
+import Sidebar from 'components/layout/sidebar/Sidebar';
+import Button from 'components/common/button/Button';
+import Dropdown from 'components/common/dropdown/Dropdown';
 import Tags from './tags/Tags';
-import MenuSelect from '../../components/layout/sidebar/menuSelect/MenuSelect';
+import MenuSelect from 'components/common/menuSelect/MenuSelect';
 
 import styles from './ExerciseDetail.module.css';
 const dummyItems = ['Tags', 'Tags', 'Tags'];

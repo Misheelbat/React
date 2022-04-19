@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Navbar from '../navbar/Navbar';
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Navbar from 'components/navbar/Navbar';
+import Header from 'components/layout/header/Header';
+import Footer from 'components/layout/footer/Footer';
 
 import styles from './Layout.module.css';
 

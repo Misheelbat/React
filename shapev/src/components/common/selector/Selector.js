@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectMainCategory } from 'features/category/categorySlice';
 
 import styles from './Selector.module.css';
 export default function Selector({ selectors }) {
+	const { mainCat } = useSelector((state) => state.category);
+	const dispatch = useDispatch();
 	const handleChange = (e) => {
-		console.log(e.target.value);
+		dispatch(selectMainCategory(e.target.value));
 	};
 	return (
-		<div className={styles.selector} onChange={handleChange}>
+		<div className={styles.selector}>
 			{selectors &&
 				selectors.map((selector, i) => {
 					return (
@@ -16,6 +20,8 @@ export default function Selector({ selectors }) {
 								value={selector}
 								name="selectors"
 								id={selector}
+								checked={mainCat === selector ? true : false}
+								onChange={handleChange}
 							/>
 							<label htmlFor={selector}>{selector}</label>
 						</div>

@@ -1,13 +1,22 @@
 import React from 'react';
+import { useCategory } from 'hooks/useCategory';
+import { useSelector, useDispatch } from 'react-redux';
+import { useSubCategory } from 'hooks/useSubCategory';
 
-import Main from '../../components/layout/mainContent/Main';
-import Sidebar from '../../components/layout/sidebar/Sidebar';
-import Card from './card/Card';
-import Dropdown from './../../components/layout/sidebar/dropdown/Dropdown';
+import Main from 'components/layout/mainContent/Main';
+import Sidebar from 'components/layout/sidebar/Sidebar';
+import Card from 'components/common/card/Card';
+import Dropdown from 'components/common/dropdown/Dropdown';
+import Selectors from 'components/common/selector/Selector';
 
 import styles from './Exercise.module.css';
+const selectors = ['Muscle', 'Body', 'Equipment'];
 
 export default function Exercise() {
+	const { mainCat, subCat } = useSelector((state) => state.category);
+	const { data } = useCategory();
+	const query = useSubCategory();
+
 	return (
 		<>
 			<Main>
@@ -15,17 +24,19 @@ export default function Exercise() {
 					<h1>Workouts</h1>
 					<p>9 out of 27</p>
 				</div>
-				<div className={styles.mainContent}>
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-				</div>
+				{query.data && (
+					<div className={styles.mainContent}>
+						{query.data.results.map((card) => (
+							<Card />
+						))}
+					</div>
+				)}
 			</Main>
 			<Sidebar>
-				<Dropdown split={true} />
+				<Selectors selectors={selectors} />
+				{data && (
+					<Dropdown title={mainCat} dropData={data.results} split={true} />
+				)}
 			</Sidebar>
 		</>
 	);
